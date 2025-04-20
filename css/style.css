@@ -102,3 +102,74 @@ pre code.hljs {
   background-color: #b61e55 !important; /* háttérszín */
   color: #ffffff !important;            /* szövegszín */
 }
+
+.home-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  text-align: center;
+  min-height: 250px;
+}
+
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.home-card h4 {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.home-card p {
+  font-size: 14px;
+  color: #555;
+  min-height: 50px;
+}
+
+.btn-outline-primary {
+  background: transparent;
+  border: 1px solid #b61e55;
+  color: #b61e55;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.btn-outline-primary:hover {
+  background: #b61e55;
+  color: #fff;
+}
+
+
+.gradient-title {
+  background: linear-gradient(to right, #b61e55, #3366cc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 30px 0;
+  border-top: 1px solid #e5e5e5;
+  font-size: 14px;
+}
+
+.footer h4 {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer a {
+  color: #b61e55;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

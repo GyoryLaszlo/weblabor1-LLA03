@@ -1,1 +1,92 @@
-Oracle tartalmak
+
+    <h2 class="text-center gradient-title"> Oracle Database – Step by Step Útmutató</h2>
+    <hr>
+  
+    <h3><i class="fas fa-download text-primary"></i> 1. lépés – Oracle Database letöltése</h3>
+    <ul>
+      <li>Nyisd meg: <a href="https://www.oracle.com/database/" target="_blank">oracle.com/database</a></li>
+      <li>Válaszd ki a verziót (pl. <strong>Oracle Database 21c Express Edition</strong>)</li>
+      <li>Regisztráció után töltsd le, majd futtasd a telepítőt</li>
+    </ul>
+  
+    <h3><i class="fas fa-cogs text-success"></i> 2. lépés – Telepítés és alapbeállítás</h3>
+    <ol>
+      <li>Futtasd a telepítőt <strong>rendszergazdai joggal</strong></li>
+      <li>Add meg az <code>SYS</code> és <code>SYSTEM</code> jelszavakat</li>
+      <li>Alapértelmezett port: <code>1521</code></li>
+      <li>A szolgáltatás elindul telepítés után automatikusan</li>
+    </ol>
+  
+    <h3><i class="fas fa-terminal text-info"></i> 3. lépés – SQL Developer letöltése (GUI kliens)</h3>
+    <ul>
+      <li>Letöltés: <a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html" target="_blank">SQL Developer</a></li>
+      <li>Telepítés nem szükséges – csak kicsomagolás</li>
+      <li>Indítás: <code>sqldeveloper.exe</code></li>
+    </ul>
+  
+    <h3><i class="fas fa-link text-warning"></i> 4. lépés – Kapcsolódás az adatbázishoz</h3>
+    <ol>
+      <li>SQL Developer → <strong>New Connection</strong></li>
+      <li>Adatkapcsolat neve: pl. <code>XE_LOCAL</code></li>
+      <li>Felhasználónév: <code>system</code> vagy saját</li>
+      <li>Jelszó: amit telepítéskor megadtál</li>
+      <li>Host: <code>localhost</code>, Port: <code>1521</code>, SID: <code>XE</code></li>
+    </ol>
+  
+    <h3><i class="fas fa-database text-danger"></i> 5. lépés – Példa SQL utasítások</h3>
+    <pre><code class="language-sql">
+  -- Táblák listázása
+  SELECT table_name FROM user_tables;
+  
+  -- Tábla létrehozása
+  CREATE TABLE felhasznalok (
+    id NUMBER PRIMARY KEY,
+    nev VARCHAR2(100),
+    email VARCHAR2(100)
+  );
+  
+  -- Sor beszúrása
+  INSERT INTO felhasznalok VALUES (1, 'Teszt Elek', 'teszt@pelda.hu');
+  
+  -- Lekérdezés
+  SELECT * FROM felhasznalok;
+    </code></pre>
+  
+    <h3><i class="fas fa-bug text-muted"></i> 6. lépés – Hibakeresés, jogosultságok</h3>
+    <ul>
+      <li>Ha nem látod a tábláid: ellenőrizd a <code>USER_</code>, <code>ALL_</code> vagy <code>DBA_</code> nézeteket</li>
+      <li>Jelszó vagy szerepkör hiba esetén: futtasd SYS-ként:</li>
+    </ul>
+  
+    <pre><code class="language-sql">
+  -- Felhasználó jelszavának módosítása
+  ALTER USER teszt IDENTIFIED BY uj_jelszo;
+  
+  -- Jogosultság adása
+  GRANT CONNECT, RESOURCE TO teszt;
+    </code></pre>
+  
+    <h3><i class="fas fa-wrench text-secondary"></i> 7. lépés – Oracle használata C#-ból (ODP.NET)</h3>
+    <ul>
+      <li>Telepítsd NuGet-ből: <code>Oracle.ManagedDataAccess</code></li>
+      <li>Kapcsolódás példa:</li>
+    </ul>
+  
+    <pre><code class="language-csharp">
+  string connStr = "User Id=teszt;Password=uj_jelszo;Data Source=localhost:1521/XE;";
+  using (var conn = new OracleConnection(connStr))
+  {
+      conn.Open();
+      var cmd = new OracleCommand("SELECT * FROM felhasznalok", conn);
+      var reader = cmd.ExecuteReader();
+      while (reader.Read())
+          Console.WriteLine(reader["nev"]);
+  }
+    </code></pre>
+  
+    <hr>
+    <p class="text-muted text-center">
+      ℹ️ További infó: <a href="https://docs.oracle.com/en/database/" target="_blank">Oracle Docs</a> | <a href="https://www.oracle.com/database/technologies/appdev/dotnet.html" target="_blank">ODP.NET</a>
+    </p>
+ 
+  
