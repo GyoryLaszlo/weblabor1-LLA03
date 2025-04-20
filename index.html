@@ -6,23 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
-
+    <link href="https://fonts.googleapis.com/css?family=Inter|Poppins|Roboto" rel="stylesheet">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/myHighlights.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-    <![endif]-->
   </head>
-  <body class="bg-primary">
-    <div class="header" style="width: 1000px; margin: auto;">
-        <h1 class="text-center">My Bootstrap Page</h1>
-        <p class="text-center">This is a simple Bootstrap page with a navbar.</p>
-    <div class="content" style="width: 1000px; margin: auto;">
-    <nav class="navbar navbar-default">
+  <body id="mybody">
+    <div class="header" style="width: 1000px; margin: auto; padding: 1em">
+      <img alt="logo" style="height: 140px;" src="images/digitaltrends-cheat-sheet.png"/>
+      <div class="content" style="width: auto; margin: auto;">
+      <nav class="navbar navbar-default">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
@@ -32,37 +27,38 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#"></a>
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">Link</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
+              <li><a class="menu-link" href="home.html"><img src="images/home.png" alt="GitHub" style="height: 32px; margin-right: 1px;"> <span class="sr-only">(current)</span></a></li>
+              <li><a class="menu-link" href="github.html">
+                  <img src="images/github.png" alt="GitHub" style="height: 32px; margin-right: 1px;">
+                  GitHub
+                </a>
               </li>
+              <li><a class="menu-link" href="visualstudio.html"><img src="images/vs.png" alt="GitHub" style="height: 32px; margin-right: 1px;">Visual Studio</a></li>
+              <li><a class="menu-link" href="entitydeveloper.html"><img src="images/entitydev.png" alt="GitHub" style="height: 32px; margin-right: 1px;">Entity Developer</a></li>
+              <li><a class="menu-link" href="oracle.html" style="padding-bottom: 20px;"><img src="images/oracle2.png" alt="GitHub" style="height: 10px; margin-top: 10px; margin-right: 1px;"></a></li>
+              <li><a class="menu-link" href="ssms.html"><img src="images/sql.png" alt="GitHub" style="height: 32px; margin-right: 1px;">SQL Server MS</a></li>
+             
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Link</a></li>
+              
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                  <img src="images/install.png" alt="GitHub" style="height: 32px; margin-right: 1px;">
+                  Telepítéshez <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
+                  <li><a class="menu-link" href="install-vs.html">Visual Studio</a></li>
+                  <li><a class="menu-link" href="oracle.html">Oracle</a></li>
+                  
                   <li role="separator" class="divider"></li>
-                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">Tippek</a></li>
+                  <li role="separator" class="divider"></li>
+                  
                 </ul>
               </li>
             </ul>
@@ -70,9 +66,25 @@
         </div><!-- /.container-fluid -->
       </nav>
     </div>
+    <pre><code class="language-javascript">
+      function greet(name) {
+        console.log("Hello, " + name + "!");
+      }
+      greet("Világ");
+</code></pre>
+    <div id="context">
+      <!-- Ide töltődik be a tartalom -->
+    </div>
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/contentManager.js"></script>
+    <script>
+      hljs.highlightAll(); // <- fontos!
+    </script>
   </body>
 </html>

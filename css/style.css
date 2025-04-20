@@ -1,0 +1,104 @@
+html, body {
+    min-height: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    /*background: linear-gradient(to bottom, white 0px, white 210px, #112a46 200px, #112a46 100%);*/
+
+      background: linear-gradient(
+        to bottom,
+        white 0px,
+        white 206px,
+        #b61e55 206px,
+        #b61e55 210px,
+        #112a46 210px,
+        #112a46 100%
+      );
+    
+  }
+  
+  #context {
+    background-color: #fff;
+    min-height: 700px;
+    height: auto;
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+  }
+
+  pre {
+    border-radius: 12px;
+  }
+/* Csak akkor töröljük a Bootstrap stílusokat, ha nincs highlight.js színezés */
+pre code:not(.hljs) {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 12px;
+}
+
+/* Highlight.js blokkok viszont kapjanak saját stílust */
+pre code.hljs {
+  padding: 1em;
+  white-space: pre;
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  height: 20px;
+
+}
+
+.navbar {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-header:after {
+  display: block;
+
+}
+
+.navbar-collapse::after {
+  clear: none;
+  display: block;
+
+}
+
+.navbar-nav img {
+  vertical-align: middle;
+  height: 16px;
+  margin-right: 6px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-nav a:hover img {
+  opacity: 1;
+}
+
+.navbar-nav>li>a {
+   padding-top: 10px;
+  padding-bottom: 9px; 
+  
+}
+
+.navbar-nav > li.active > a {
+  background-color: #b61e55 !important; /* háttérszín */
+  color: #ffffff !important;            /* szövegszín */
+}
