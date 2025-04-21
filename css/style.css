@@ -104,6 +104,7 @@ pre code.hljs {
 }
 
 .home-card {
+  position: relative;
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -113,6 +114,7 @@ pre code.hljs {
   transition: all 0.2s ease;
   text-align: center;
   min-height: 250px;
+  z-index: 1;
 }
 
 .home-card:hover {
@@ -172,4 +174,41 @@ pre code.hljs {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #e7e7e7;
+  background-color: white;
+}
+
+/* Alapstílus */
+#sidebar {
+  width: 220px;
+  background: #8b1e58;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+
+}
+
+/* Mobilon alapból elrejtve */
+@media (max-width: 767px) {
+  #sidebar {
+    transform: translateX(-100%);
+  }
+  #sidebar.active {
+    transform: translateX(0);
+  }
+  #mainContent {
+    margin-left: 0 !important;
+  }
+}
+
+/* Tartalom eltolása nagy képernyőn */
+#mainContent {
+  margin-left: 220px;
+  padding: 20px;
 }
