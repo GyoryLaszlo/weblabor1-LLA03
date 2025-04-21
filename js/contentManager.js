@@ -6,13 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadPage("pages/home.html");
 
     // Menü linkek kezelése
-    document.querySelectorAll(".menu-link").forEach(link => {
-        link.addEventListener("click", function (e) {
-            e.preventDefault(); // ne frissítse az oldalt
-            const page = this.getAttribute("href");
-            loadPage("pages/" + page);
-        });
-    });
+    addMenuLinkListeners(); // Hívjuk meg az eseménykezelőket
 
     function loadPage(url) {
         fetch(url)
@@ -23,32 +17,38 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(html => {
                 context.innerHTML = html;
                 hljs.highlightAll();
+
+                // Az új tartalom betöltése után újra hozzáadjuk az eseménykezelőket
+                addMenuLinkListeners();
             })
             .catch(err => {
                 context.innerHTML = `<div class="alert alert-danger">Hiba a betöltés során: ${err.message}</div>`;
             });
     }
-});
 
-document.querySelectorAll(".menu-link").forEach(link => {
-    link.addEventListener("click", function (e) {
-        e.preventDefault();
+    // Menü linkekhez eseménykezelők hozzárendelése
+    function addMenuLinkListeners() {
+        document.querySelectorAll(".menu-link").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
 
-        const page = this.getAttribute("href");
+                const page = this.getAttribute("href");
 
-        // 🔄 ACTIVE reset minden menüpontra
-        document.querySelectorAll(".menu-link").forEach(l => {
-            if (l.parentElement) {
-                l.parentElement.classList.remove("active");
-            }
+                // 🔄 ACTIVE reset minden menüpontra
+                document.querySelectorAll(".menu-link").forEach(l => {
+                    if (l.parentElement) {
+                        l.parentElement.classList.remove("active");
+                    }
+                });
+
+                // 🔄 ACTIVE beállítás az aktuálisra
+                if (this.parentElement) {
+                    this.parentElement.classList.add("active");
+                }
+
+                // 🔄 oldal betöltése
+                loadPage("pages/" + page);
+            });
         });
-
-        // 🔄 ACTIVE beállítás az aktuálisra
-        if (this.parentElement) {
-            this.parentElement.classList.add("active");
-        }
-
-        // 🔄 oldal betöltése
-        loadPage("pages/" + page);
-    });
+    }
 });
