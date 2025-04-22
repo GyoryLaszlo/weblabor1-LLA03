@@ -1,4 +1,4 @@
-// 🔄 HTML részlet betöltése egy adott elembe
+//HTML részlet betöltése egy adott elembe
 function loadPartial(id, file, callback) {
     fetch(file)
       .then(res => res.text())
@@ -23,14 +23,14 @@ function loadPartial(id, file, callback) {
       });
   }
   
-  // 🔁 Tartalom betöltése hash alapján
+  //Tartalom betöltése hash alapján
   function loadContentFromHash() {
     const page = location.hash.replace('#', '') || 'home';
     loadPartial('content', `partials/${page}.html`);
     setActiveLink();
   }
   
-  // ⭐ Aktív menüpont kiemelése
+  // Aktív menüpont kiemelése
   function setActiveLink() {
     const currentHash = location.hash || '#home';
     document.querySelectorAll('.menu-link').forEach(link => {
@@ -44,7 +44,7 @@ function loadPartial(id, file, callback) {
     });
   }
   
-  // 📎 Menü linkek eseménykezelői (pl. ha nem hash-t használsz, hanem JS betöltést)
+  // Menü linkek eseménykezelői (pl. ha nem hash-t használsz, hanem JS betöltést)
   function addMenuLinkListeners() {
     document.querySelectorAll(".menu-link").forEach(link => {
       link.addEventListener("click", function (e) {
@@ -58,7 +58,7 @@ function loadPartial(id, file, callback) {
     });
   }
   
-  // 🚀 Indítás
+  // Indítás
   document.addEventListener('DOMContentLoaded', () => {
     loadPartial('menu', 'partials/menu.html');
     loadContentFromHash();
