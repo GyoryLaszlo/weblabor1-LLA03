@@ -1,0 +1,71 @@
+
+    <h2 class="text-center gradient-title">SQL Server Management Studio – Step by Step Útmutató</h2>
+    <hr>
+  
+    <h3><i class="fas fa-download text-primary"></i> 1. lépés – SSMS letöltése és telepítése</h3>
+    <ul>
+      <li>Nyisd meg: <a href="https://aka.ms/ssms" target="_blank">https://aka.ms/ssms</a></li>
+      <li>Kattints a <strong>Download</strong> gombra, majd futtasd a telepítőt</li>
+      <li>Telepítés után indítsd el a <strong>SQL Server Management Studio</strong>-t</li>
+    </ul>
+  
+    <h3><i class="fas fa-link text-success"></i> 2. lépés – Kapcsolódás szerverhez</h3>
+    <ol>
+      <li>Indításkor megjelenik a <strong>Connect to Server</strong> ablak</li>
+      <li>Server type: <code>Database Engine</code></li>
+      <li>Server name: <code>localhost</code> vagy a szerver neve</li>
+      <li>Authentication: <code>Windows Authentication</code> vagy <code>SQL Server Authentication</code></li>
+    </ol>
+  
+    <h3><i class="fas fa-database text-info"></i> 3. lépés – Új adatbázis létrehozása</h3>
+    <ol>
+      <li>Object Explorer → jobb klikk a <strong>Databases</strong> mappán</li>
+      <li>Válaszd: <strong>New Database</strong></li>
+      <li>Adj nevet, majd kattints <strong>OK</strong></li>
+    </ol>
+  
+    <h3><i class="fas fa-table text-warning"></i> 4. lépés – Táblák létrehozása</h3>
+    <ul>
+      <li>Az adatbázis alatt jobb klikk → <strong>New Table</strong></li>
+      <li>Hozz létre mezőket (pl. <code>Id INT PRIMARY KEY</code>, <code>Nev NVARCHAR(100)</code>)</li>
+      <li>Mentés: <code>Ctrl + S</code>, majd add meg a tábla nevét</li>
+    </ul>
+  
+    <h3><i class="fas fa-terminal text-danger"></i> 5. lépés – SQL utasítások futtatása</h3>
+    <ol>
+      <li>Object Explorer → jobb klikk az adatbázison → <strong>New Query</strong></li>
+      <li>Írj be például egy <code>SELECT</code> vagy <code>INSERT</code> utasítást</li>
+    </ol>
+  
+    <pre><code class="language-sql">
+  -- Tábla lekérdezése
+  SELECT * FROM Felhasznalok;
+  
+  -- Új sor beszúrása
+  INSERT INTO Felhasznalok (Id, Nev) VALUES (1, 'Teszt Elek');
+    </code></pre>
+  
+    <h3><i class="fas fa-search text-muted"></i> 6. lépés – Adatok böngészése</h3>
+    <ul>
+      <li>Object Explorer → jobb klikk egy táblán → <strong>Select Top 1000 Rows</strong></li>
+      <li>A lekérdezés automatikusan generálódik</li>
+    </ul>
+  
+    <h3><i class="fas fa-user-shield text-secondary"></i> 7. lépés – Felhasználók és jogosultságok</h3>
+    <pre><code class="language-sql">
+  -- Új SQL felhasználó létrehozása
+  CREATE LOGIN tesztuser WITH PASSWORD = 'ErősJelszó123';
+  
+  -- Felhasználó hozzárendelése adatbázishoz
+  USE TesztAdatbazis;
+  CREATE USER tesztuser FOR LOGIN tesztuser;
+  EXEC sp_addrolemember 'db_datareader', 'tesztuser';
+  EXEC sp_addrolemember 'db_datawriter', 'tesztuser';
+    </code></pre>
+  
+    <hr>
+    <p class="text-muted text-center">
+      ℹ️ Bővebben: <a href="https://learn.microsoft.com/en-us/sql/ssms" target="_blank">Microsoft Learn – SSMS</a>
+    </p>
+
+  

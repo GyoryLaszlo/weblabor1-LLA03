@@ -1,0 +1,65 @@
+<h2 class="text-center gradient-title"">GitHub – Step by Step Útmutató</h2>
+<hr>
+
+<h3>1. Előkészületek</h3>
+<ul>
+    <li>✅ Regisztrálj a <a href="https://github.com" target="_blank">github.com</a> oldalon</li>
+    <li>✅ Telepítsd a Git klienst: <a href="https://git-scm.com" target="_blank">git-scm.com</a></li>
+    <li>✅ Állítsd be a Git globális adataidat:</li>
+</ul>
+
+<pre><code class="language-bash">
+  git config --global user.name "Saját Neved"
+  git config --global user.email "email@example.com"
+    </code></pre>
+
+<h3>2. Új repository létrehozása</h3>
+<ol>
+    <li>Menj a GitHub főoldalra</li>
+    <li>Kattints a jobb felső sarokban a <strong>+</strong> ikonra → <strong>New repository</strong></li>
+    <li>Adj nevet (pl. <code>webprojekt</code>)</li>
+    <li>Válaszd ki, hogy <code>Public</code> vagy <code>Private</code></li>
+    <li>(Opció) Ha helyileg szeretnéd inicializálni, NE pipáld ki az <code>Initialize with README</code> mezőt</li>
+</ol>
+
+<h3><i class="fas fa-code-branch"></i> 3. Repository klónozása gépre</h3>
+<pre><code class="language-bash">
+  git clone https://github.com/felhasznalo/webprojekt.git
+  cd webprojekt
+    </code></pre>
+
+<h3>4. Kód módosítása és verziókövetés</h3>
+<ol>
+    <li>Hozz létre például egy fájlt: <code>index.html</code></li>
+    <li>Stageld a módosításokat:</li>
+</ol>
+
+<pre><code class="language-bash">
+  git add index.html
+  git commit -m "Első verzió"
+  git push origin main
+    </code></pre>
+
+<h3>5. Változások nyomon követése</h3>
+<ul>
+    <li><code>git status</code> – mutatja a módosított fájlokat</li>
+    <li><code>git log</code> – előzmények listázása</li>
+</ul>
+
+<h3>6. További lehetőségek</h3>
+<ul>
+    <li><code>git branch</code>, <code>git checkout -b feature</code> – új ág létrehozása</li>
+    <li><code>.gitignore</code> – fájlok kizárása verziózásból</li>
+    <li><strong>Pull request</strong> – ha szeretnéd a módosításaidat integrálni vagy másokkal megosztani</li>
+</ul>
+
+<h3>7. Következő lépések</h3>
+<ul>
+    <li><code>README.md</code> fájl írása</li>
+    <li>Projekt licencelése (pl. MIT, GPL)</li>
+    <li><a href="https://pages.github.com/" target="_blank">GitHub Pages</a> – statikus weboldal publikálása</li>
+</ul>
+
+<hr>
+<p class="text-muted text-center">🔁 Ez az útmutató a GitHub alapjainak gyors elsajátítását segíti. További infó: <a
+        href="https://docs.github.com/" target="_blank">GitHub dokumentáció</a></p>
