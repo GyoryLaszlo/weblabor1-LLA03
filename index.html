@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>cs</title>
+        <link href="https://fonts.googleapis.com/css?family=Inter|Poppins|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/myHighlights.css">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+       
+        <script>
+            function loadPartial(id, file) {
+                fetch(file)
+                    .then(res => res.text())
+                    .then(html => document.getElementById(id).innerHTML = html);
+            }
+
+            window.addEventListener('DOMContentLoaded', () => {
+                loadPartial('menu', 'partials/menu.html');
+                loadPartial('footer', 'partials/footer.html');
+            });
+        </script>
+    </head>
+
+<body>
+    
+    <div id="menu">Menü betöltése...</div>
+    <main>
+        <div id="content">Tartalom betöltése...</div>
+    </main>
+    </div>
+    <div id="footer">Lábléc betöltése...</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+        crossorigin="anonymous"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="js/contentManager.js"></script>
+    <script>
+        hljs.highlightAll(); // <- fontos!
+    </script>
+</body>
+
+</html>
