@@ -25,10 +25,11 @@ function loadPartial(id, file, callback) {
   
   //Tartalom betöltése hash alapján
   function loadContentFromHash() {
-    const page = location.hash.replace('#', '') || 'home';
+   const page = location.hash.replace('#', '') || 'home';
+
     loadPartial('content', `partials/${page}.html`);
     setActiveLink();
-  }
+ }
   
   // Aktív menüpont kiemelése
   function setActiveLink() {
@@ -64,4 +65,4 @@ function loadPartial(id, file, callback) {
     loadContentFromHash();
     window.addEventListener('hashchange', loadContentFromHash);
   });
-  
+ 

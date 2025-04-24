@@ -29,15 +29,30 @@
             });
         </script>
     </head>
-
 <body>
-    
+  
     <div id="menu">Menü betöltése...</div>
     <main>
         <div id="content">Tartalom betöltése...</div>
     </main>
     </div>
     <div id="footer">Lábléc betöltése...</div>
+   
+    <!--popup hidden-->
+    <div id="popupForm">
+        <form id="messageForm">
+          <h3>Üzenetküldő űrlap</h3>
+          <input type="text" id="lastname" placeholder="Vezetéknév" required>
+          <input type="text" id="firstname" placeholder="Keresztnév" required>
+          <input type="date" id="birthdate" required>
+          <input type="email" id="email" placeholder="Email cím" required>
+          <input type="text" id="subject" placeholder="Üzenet tárgya" required>
+          <textarea id="message" placeholder="Üzenet szövege" rows="4" required></textarea>
+          <div class="error" id="formError"></div>
+          <button class="menu-link btn btn-sm btn-outline-primary" type="submit">Küldés</button>
+          <button class="menu-link btn btn-sm btn-outline-secondary" type="button" onclick="closePopup()">Mégse</button>
+        </form>
+      </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
@@ -53,6 +68,12 @@
     <script>
         hljs.highlightAll(); // <- fontos!
     </script>
-</body>
+     <script src="js/popupLoader.js"></script>
 
+     <script>
+
+</script>
+
+      
+</body>
 </html>
