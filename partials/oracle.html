@@ -1,15 +1,15 @@
 
-    <h2 class="text-center gradient-title"> Oracle Database – Step by Step Útmutató</h2>
+    <h2 class="text-center gradient-title"> Oracle Database útmutató</h2>
     <hr>
   
-    <h3><i class="fas fa-download"></i> 1. lépés – Oracle Database letöltése</h3>
+    <h3><i class="fas fa-download"></i> 1. Oracle Database letöltése</h3>
     <ul>
       <li>Nyisd meg: <a href="https://www.oracle.com/database/" target="_blank">oracle.com/database</a></li>
       <li>Válaszd ki a verziót (pl. <strong>Oracle Database 21c Express Edition</strong>)</li>
       <li>Regisztráció után töltsd le, majd futtasd a telepítőt</li>
     </ul>
   
-    <h3><i class="fas fa-cogs"></i> 2. lépés – Telepítés és alapbeállítás</h3>
+    <h3><i class="fas fa-cogs"></i> 2. Telepítés és alapbeállítás</h3>
     <ol>
       <li>Futtasd a telepítőt <strong>rendszergazdai joggal</strong></li>
       <li>Add meg az <code>SYS</code> és <code>SYSTEM</code> jelszavakat</li>
@@ -17,14 +17,14 @@
       <li>A szolgáltatás elindul telepítés után automatikusan</li>
     </ol>
   
-    <h3><i class="fas fa-terminal"></i> 3. lépés – SQL Developer letöltése (GUI kliens)</h3>
+    <h3><i class="fas fa-terminal"></i> 3. SQL Developer letöltése (GUI kliens)</h3>
     <ul>
       <li>Letöltés: <a href="https://www.oracle.com/tools/downloads/sqldev-downloads.html" target="_blank">SQL Developer</a></li>
       <li>Telepítés nem szükséges – csak kicsomagolás</li>
       <li>Indítás: <code>sqldeveloper.exe</code></li>
     </ul>
   
-    <h3><i class="fas fa-link"></i> 4. lépés – Kapcsolódás az adatbázishoz</h3>
+    <h3><i class="fas fa-link"></i> 4. Kapcsolódás az adatbázishoz</h3>
     <ol>
       <li>SQL Developer → <strong>New Connection</strong></li>
       <li>Adatkapcsolat neve: pl. <code>XE_LOCAL</code></li>
@@ -32,8 +32,15 @@
       <li>Jelszó: amit telepítéskor megadtál</li>
       <li>Host: <code>localhost</code>, Port: <code>1521</code>, SID: <code>XE</code></li>
     </ol>
+    <button class="btn btn-info" data-toggle="collapse" data-target="#img-new-connect" aria-expanded="false" aria-controls="img-new-repo">
+      📷 Képernyőkép megtekintése
+    </button>
+    <!-- Lenyíló kép -->
+    <div id="img-new-connect" class="collapse text-center" style="margin-top: 10px;">
+      <img src="images/oracle-new-connection.jpg" alt="Új kapcsolódás" class="img-responsive img-thumbnail center-block" style="max-width: 800px;">
+    </div>
   
-    <h3><i class="fas fa-database"></i> 5. lépés – Példa SQL utasítások</h3>
+    <h3><i class="fas fa-database"></i> 5. Példa SQL utasítások</h3>
     <pre><code class="language-sql">
   -- Táblák listázása
   SELECT table_name FROM user_tables;
@@ -52,7 +59,7 @@
   SELECT * FROM felhasznalok;
     </code></pre>
   
-    <h3><i class="fas fa-bug"></i> 6. lépés – Hibakeresés, jogosultságok</h3>
+    <h3><i class="fas fa-bug"></i> 6. Hibakeresés, jogosultságok</h3>
     <ul>
       <li>Ha nem látod a tábláid: ellenőrizd a <code>USER_</code>, <code>ALL_</code> vagy <code>DBA_</code> nézeteket</li>
       <li>Jelszó vagy szerepkör hiba esetén: futtasd SYS-ként:</li>
@@ -66,7 +73,7 @@
   GRANT CONNECT, RESOURCE TO teszt;
     </code></pre>
   
-    <h3><i class="fas fa-wrench"></i> 7. lépés – Oracle használata C#-ból (ODP.NET)</h3>
+    <h3><i class="fas fa-wrench"></i> 7. Oracle használata C#-ból (ODP.NET)</h3>
     <ul>
       <li>Telepítsd NuGet-ből: <code>Oracle.ManagedDataAccess</code></li>
       <li>Kapcsolódás példa:</li>

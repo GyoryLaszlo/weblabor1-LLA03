@@ -1,0 +1,301 @@
+<div style="max-width: 990px">
+    <h2 class="gradient-title">Git Használati Lépések</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Git Kód</th>
+                    <th>Mit csinál</th>
+                    <th>Használati Példa</th>
+                    <th>Alternatív Parancsok</th>
+                    <th>Gyakori Hibák / Figyelmeztetések</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>git init</code></td>
+                    <td>Inicializálja a Git repository-t a projekt mappában.</td>
+                    <td>Használható egy új projekt indításához: <code>git init</code></td>
+                    <td>Ha nem akarod hozzáadni az összes fájlt, próbálhatod: <code>git add -A</code></td>
+                    <td>Ha a git init parancsot már lefuttattad, a második futtatás felülírhatja a repository-t.</td>
+                </tr>
+                <tr>
+                    <td><code>git clone &lt;repository-url&gt;</code></td>
+                    <td>Lemásolja egy távoli repository-t a helyi gépre.</td>
+                    <td>Lemásolás egy távoli repo-ból: <code>git clone https://github.com/username/project.git</code></td>
+                    <td>Ha csak egy fájlt szeretnél klónozni, adj meg egy specifikus fájlt is: <code>git clone https://github.com/username/project.git --depth 1</code></td>
+                    <td>Ha hibát kapsz a clone parancs használata közben, ellenőrizd, hogy a repository URL-je helyes-e.</td>
+                </tr>
+                <tr>
+                    <td><code>git status</code></td>
+                    <td>Megmutatja a projekt állapotát (milyen változtatások történtek).</td>
+                    <td>Megtekintheted a változásokat: <code>git status</code></td>
+                    <td>Másik módja a status megtekintésének: <code>git diff</code></td>
+                    <td>A status parancs futtatása után biztosítsd, hogy a fájlok helyes állapotban legyenek a commit előtt.</td>
+                </tr>
+                <tr>
+                    <td><code>git add .</code></td>
+                    <td>Hozzáadja a változtatásokat a staging area-hoz, hogy készen álljanak a commit-ra.</td>
+                    <td>Hozzáadott fájlok az összeshez: <code>git add .</code></td>
+                    <td>Másik módszer a fájlok hozzáadására: <code>git add -p</code></td>
+                    <td>Ha a git add parancsot használod, és nem figyelsz, véletlenül olyan fájlokat is hozzáadhatsz, amik nem szükségesek.</td>
+                </tr>
+                <tr>
+                    <td><code>git commit -m 'commit üzenet'</code></td>
+                    <td>Elmenti a változtatásokat a helyi repository-ba egy üzenet kíséretében.</td>
+                    <td>Commit a változásokkal: <code>git commit -m 'Első commit'</code></td>
+                    <td>A commit üzenetet módosíthatod a <code>git commit --amend</code> paranccsal.</td>
+                    <td>A commit üzenet megadása nélküli commit hibát okozhat: <code>git commit -m ''</code></td>
+                </tr>
+                <tr>
+                    <td><code>git push</code></td>
+                    <td>Feltölti a helyi változtatásokat a távoli repository-ba.</td>
+                    <td>Feltöltés a távoli repóba: <code>git push origin master</code></td>
+                    <td>A push parancsot specifikus branch-ra is használhatod: <code>git push origin &lt;branch-name&gt;</code></td>
+                    <td>Ha a push nem sikerül, előfordulhat, hogy a távoli repository-val eltérés van (például mások is dolgoztak rajta).</td>
+                </tr>
+                <tr>
+                    <td><code>git pull</code></td>
+                    <td>Letölti a távoli repository változtatásait a helyi gépre.</td>
+                    <td>Pull a távoli változások letöltése: <code>git pull</code></td>
+                    <td>Pull helyett frissítheted a távoli ágakat: <code>git fetch</code></td>
+                    <td>A pull parancs gyakran merge konfliktusokat okozhat, ha a helyi és távoli változások nem összeegyeztethetőek.</td>
+                </tr>
+                <tr>
+                    <td><code>git branch</code></td>
+                    <td>Megmutatja a repository-ban elérhető ágakat.</td>
+                    <td>Ágak megtekintése: <code>git branch</code></td>
+                    <td>Ha új ágat szeretnél létrehozni: <code>git branch &lt;branch-name&gt;</code></td>
+                    <td>Ha nem találod a megfelelő ágat a git branch parancs alatt, akkor új ágat kell létrehoznod.</td>
+                </tr>
+                <tr>
+                    <td><code>git checkout &lt;branch-name&gt;</code></td>
+                    <td>Átvált egy másik ágra a munkafolyamat folytatásához.</td>
+                    <td>Átváltás egy másik ágra: <code>git checkout develop</code></td>
+                    <td>Ha egy ágra szeretnél váltani anélkül, hogy elköteleznéd a változtatásokat: <code>git checkout -f</code></td>
+                    <td>Ha a checkout után nem változik az ág, akkor próbáld meg a változtatásokat elkötelezni a munka folytatásához.</td>
+                </tr>
+                <tr>
+                    <td><code>git merge &lt;branch-name&gt;</code></td>
+                    <td>Összevon két ágat egyesítve a változtatásokat.</td>
+                    <td>Merge a feature ágra: <code>git merge feature-xyz</code></td>
+                    <td>A merge helyett próbálhatod a rebase-t: <code>git rebase &lt;branch-name&gt;</code></td>
+                    <td>A merge során előfordulhatnak konfliktusok, amelyeket manuálisan kell megoldani.</td>
+                </tr>
+                <tr>
+                    <td><code>git log</code></td>
+                    <td>Megmutatja a commitok történetét, hogy nyomon követhessük a projekt előzményeit.</td>
+                    <td>Commitok előzményeinek megtekintése: <code>git log</code></td>
+                    <td>A log helyett próbálhatod a <code>git reflog</code> parancsot, hogy visszakövethesd a mozgásokat.</td>
+                    <td>A git log parancs csak a commitokat mutatja, nem minden történeti adatot.</td>
+                </tr>
+                <tr>
+                    <td><code>git fetch</code></td>
+                    <td>Frissíti a távoli repository-t anélkül, hogy automatikusan beolvasztaná a változásokat.</td>
+                    <td>Frissítést végezhetsz távoli repository-ból: <code>git fetch</code></td>
+                    <td>Alternatívaként használhatod a <code>git pull --rebase</code>-t, hogy a helyi változtatásokat a távoli változtatások elé helyezd.</td>
+                    <td>Ha a fetch után nem látod az új változtatásokat, ellenőrizd, hogy a megfelelő távoli repository-t frissítetted-e.</td>
+                </tr>
+                <tr>
+                    <td><code>git reset</code></td>
+                    <td>Visszaállítja a staging area-t vagy a commit állapotát egy korábbi állapotra.</td>
+                    <td>Visszaállítás egy előző commit állapotára: <code>git reset --hard HEAD~1</code></td>
+                    <td>Ha nem szeretnéd teljesen visszaállítani a változtatásokat, használhatod a <code>git reset --soft</code> parancsot.</td>
+                    <td>A reset parancs elveszítheti a változtatásokat, ha nem használsz `--soft` vagy `--mixed` módot, ezért fontos biztonsági másolatot készíteni.</td>
+                </tr>
+                <tr>
+                    <td><code>git diff</code></td>
+                    <td>Megmutatja a fájlok közötti különbségeket.</td>
+                    <td>Különbségek megtekintése egy fájl között: <code>git diff</code></td>
+                    <td>Használhatod a <code>git diff --staged</code> parancsot a staging area-ban lévő változtatások megtekintésére.</td>
+                    <td>Ha túl sok változást látsz, próbálj szűrni a fájlokra vagy specifikus commitokra.</td>
+                </tr>
+                <tr>
+                    <td><code>git rm</code></td>
+                    <td>Eltávolít egy fájlt a repository-ból.</td>
+                    <td>Fájl törlésének megoldása: <code>git rm fájlneve.txt</code></td>
+                    <td>Ha nem akarod eltávolítani a fájlt a helyi rendszerből, használhatod a <code>git rm --cached</code> parancsot.</td>
+                    <td>Ne használd a <code>git rm</code> parancsot, ha csak a fájlok törlését szeretnéd a staging area-ból.</td>
+                </tr>
+                <tr>
+                    <td><code>git tag</code></td>
+                    <td>Lehetővé teszi a verziók megjelölését.</td>
+                    <td>Tag létrehozása egy commit-nál: <code>git tag v1.0</code></td>
+                    <td>Tagek listázása: <code>git tag -l</code></td>
+                    <td>Ha hibás tagot hoztál létre, törölheted azt a <code>git tag -d v1.0</code> paranccsal.</td>
+                </tr>
+                <tr>
+                    <td><code>git stash</code></td>
+                    <td>Ideiglenesen elmenti a nem commitolt változtatásokat, hogy később vissza tudd őket hozni.</td>
+                    <td>Változtatások elmentése: <code>git stash</code></td>
+                    <td>Ha egyesíteni akarod a változtatásokat, használd a <code>git stash pop</code> parancsot.</td>
+                    <td>Ne hagyd sokáig stash-ben a változtatásokat, mert könnyen elfelejtheted őket.</td>
+                </tr>
+                <!-- Új parancsok hozzáadása -->
+                <tr>
+                    <td><code>git clean</code></td>
+                    <td>Törli a nem nyomon követett fájlokat a projektből.</td>
+                    <td>Fájlok törlése: <code>git clean -f</code></td>
+                    <td>Használhatod a <code>git clean -fd</code> parancsot a mappák törlésére is.</td>
+                    <td>Ne használd, ha nem biztos, hogy törölni szeretnéd a fájlokat.</td>
+                </tr>
+                <tr>
+                    <td><code>git bisect</code></td>
+                    <td>Segít megtalálni, hogy mely commit okozott egy hibát.</td>
+                    <td>Hiba keresése: <code>git bisect start</code></td>
+                    <td>Alternatív parancs: <code>git bisect run</code></td>
+                    <td>Ne felejtsd el befejezni a bisect-et a <code>git bisect reset</code> paranccsal.</td>
+                </tr>
+                <tr>
+                    <td><code>git reflog</code></td>
+                    <td>Visszakeresheted a korábbi git műveleteket.</td>
+                    <td>Reflog lekérése: <code>git reflog</code></td>
+                    <td>Ha el akarod dobni a hibás állapotot, használhatod a <code>git reset --hard</code>-ot.</td>
+                    <td>Használd körültekintően, hogy ne veszíts el adatokat.</td>
+                </tr>
+                <tr>
+                    <td><code>git archive</code></td>
+                    <td>Archívumot készíthetsz a repository-ból.</td>
+                    <td>Archívum létrehozása: <code>git archive --format=zip HEAD > project.zip</code></td>
+                    <td>Használhatod a <code>git archive --output</code> kapcsolót is.</td>
+                    <td>Ne használj archívumot fájlok törléséhez, az csak a fájlok mentésére szolgál.</td>
+                </tr>
+                <tr>
+                    <td><code>git submodule</code></td>
+                    <td>Almodulok kezelése egy repository-ban.</td>
+                    <td>Almodul hozzáadása: <code>git submodule add &lt;repository-url&gt;</code></td>
+                    <td>Frissítés: <code>git submodule update</code></td>
+                    <td>Ne felejtsd el a submodule-kat a <code>git submodule init</code> parancsokkal inicializálni.</td>
+                </tr>
+                <tr>
+                    <td><code>git cherry-pick</code></td>
+                    <td>Lehetővé teszi egy commit alkalmazását egy másik ágra.</td>
+                    <td>Commit másolása: <code>git cherry-pick &lt;commit-hash&gt;</code></td>
+                    <td>Használhatod a <code>git cherry-pick --abort</code> parancsot a folyamat megszakítására.</td>
+                    <td>Ha a commitokat nem jól választod ki, akkor konfliktusokhoz vezethetnek.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2 class="gradient-title">Docker Parancsok – Lépésről lépésre</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Docker Parancs</th>
+                    <th>Mit csinál</th>
+                    <th>Példa</th>
+                    <th>Alternatíva / Megjegyzés</th>
+                    <th>Gyakori Hiba / Figyelmeztetés</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>docker --version</code></td>
+                    <td>Megjeleníti a Docker verzióját.</td>
+                    <td><code>docker --version</code></td>
+                    <td>Használható: <code>docker version</code> is</td>
+                    <td>Régi verzió esetén inkompatibilitási hibák lehetnek.</td>
+                </tr>
+                <tr>
+                    <td><code>docker pull</code></td>
+                    <td>Letölti az adott image-et a Docker Hub-ról.</td>
+                    <td><code>docker pull nginx</code></td>
+                    <td>Privát repository esetén login szükséges.</td>
+                    <td>Letöltés sikertelen lehet, ha nincs internet vagy jogosultság.</td>
+                </tr>
+                <tr>
+                    <td><code>docker images</code></td>
+                    <td>Kilistázza a letöltött image-eket.</td>
+                    <td><code>docker images</code></td>
+                    <td>Használható: <code>docker image ls</code></td>
+                    <td>Túl sok image gyorsan elfogyaszthatja a tárhelyet.</td>
+                </tr>
+                <tr>
+                    <td><code>docker ps</code></td>
+                    <td>Kilistázza a futó konténereket.</td>
+                    <td><code>docker ps</code></td>
+                    <td>Használható: <code>docker container ls</code></td>
+                    <td>Csak a futó konténereket mutatja, a leállítottakat nem.</td>
+                </tr>
+                <tr>
+                    <td><code>docker ps -a</code></td>
+                    <td>Kilistázza az összes konténert (futó és leállított is).</td>
+                    <td><code>docker ps -a</code></td>
+                    <td>Használható: <code>docker container ls -a</code></td>
+                    <td>Sok leállított konténer rendetlenséget okozhat.</td>
+                </tr>
+                <tr>
+                    <td><code>docker run</code></td>
+                    <td>Elindít egy új konténert az adott image-ből.</td>
+                    <td><code>docker run -d -p 80:80 nginx</code></td>
+                    <td>Használható <code>--rm</code> opcióval automatikus törléshez.</td>
+                    <td>Port ütközés, ha az adott port már foglalt.</td>
+                </tr>
+                <tr>
+                    <td><code>docker exec</code></td>
+                    <td>Parancsot futtat egy futó konténeren belül.</td>
+                    <td><code>docker exec -it my_container bash</code></td>
+                    <td>Használható: <code>docker attach</code></td>
+                    <td>A konténernek futnia kell a használathoz.</td>
+                </tr>
+                <tr>
+                    <td><code>docker stop</code></td>
+                    <td>Leállít egy futó konténert.</td>
+                    <td><code>docker stop my_container</code></td>
+                    <td>Használható: <code>docker kill</code></td>
+                    <td>Nem áll le azonnal, ha a konténer épp folyamatot végez.</td>
+                </tr>
+                <tr>
+                    <td><code>docker start</code></td>
+                    <td>Elindít egy leállított konténert.</td>
+                    <td><code>docker start my_container</code></td>
+                    <td>Újraindításhoz: <code>docker restart</code></td>
+                    <td>A konténernek léteznie kell, különben hibát dob.</td>
+                </tr>
+                <tr>
+                    <td><code>docker rm</code></td>
+                    <td>Töröl egy konténert.</td>
+                    <td><code>docker rm my_container</code></td>
+                    <td>Több törléshez: <code>docker rm $(docker ps -a -q)</code></td>
+                    <td>Futó konténer nem törölhető, előbb meg kell állítani.</td>
+                </tr>
+                <tr>
+                    <td><code>docker rmi</code></td>
+                    <td>Töröl egy image-et.</td>
+                    <td><code>docker rmi nginx</code></td>
+                    <td>Használható: <code>docker image rm</code></td>
+                    <td>Ha konténer használja az image-et, nem törölhető.</td>
+                </tr>
+                <tr>
+                    <td><code>docker build</code></td>
+                    <td>Image-et készít egy Dockerfile alapján.</td>
+                    <td><code>docker build -t my_image .</code></td>
+                    <td>Dockerfile-nak a mappában kell lennie.</td>
+                    <td>Hiányzó vagy hibás Dockerfile hibát okoz.</td>
+                </tr>
+                <tr>
+                    <td><code>docker logs</code></td>
+                    <td>Megmutatja egy konténer naplóit.</td>
+                    <td><code>docker logs my_container</code></td>
+                    <td>Használható: <code>-f</code> opció a folyamatos naplózáshoz.</td>
+                    <td>Napló túl hosszú lehet, nehéz olvasni.</td>
+                </tr>
+                <tr>
+                    <td><code>docker-compose up</code></td>
+                    <td>Elindítja a docker-compose.yml-ben definiált konténereket.</td>
+                    <td><code>docker-compose up -d</code></td>
+                    <td>Használható interaktív módon is.</td>
+                    <td>Hibás YAML szintaxis megakadályozza az indulást.</td>
+                </tr>
+                <tr>
+                    <td><code>docker-compose down</code></td>
+                    <td>Leállítja és eltávolítja a docker-compose konténereket.</td>
+                    <td><code>docker-compose down</code></td>
+                    <td>Volume törléshez: <code>--volumes</code></td>
+                    <td>Volume-ok és hálózatok nem törlődnek automatikusan.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

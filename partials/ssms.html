@@ -1,15 +1,15 @@
 
-    <h2 class="text-center gradient-title">SQL Server Management Studio – Step by Step Útmutató</h2>
+    <h2 class="text-center gradient-title">SQL Server Management Studio útmutató</h2>
     <hr>
   
-    <h3><i class="fas fa-download"></i> 1. lépés – SSMS letöltése és telepítése</h3>
+    <h3><i class="fas fa-download"></i> 1. SSMS letöltése és telepítése</h3>
     <ul>
       <li>Nyisd meg: <a href="https://aka.ms/ssms" target="_blank">https://aka.ms/ssms</a></li>
       <li>Kattints a <strong>Download</strong> gombra, majd futtasd a telepítőt</li>
       <li>Telepítés után indítsd el a <strong>SQL Server Management Studio</strong>-t</li>
     </ul>
   
-    <h3><i class="fas fa-link"></i> 2. lépés – Kapcsolódás szerverhez</h3>
+    <h3><i class="fas fa-link"></i> 2. Kapcsolódás szerverhez</h3>
     <ol>
       <li>Indításkor megjelenik a <strong>Connect to Server</strong> ablak</li>
       <li>Server type: <code>Database Engine</code></li>
@@ -17,21 +17,21 @@
       <li>Authentication: <code>Windows Authentication</code> vagy <code>SQL Server Authentication</code></li>
     </ol>
   
-    <h3><i class="fas fa-database"></i> 3. lépés – Új adatbázis létrehozása</h3>
+    <h3><i class="fas fa-database"></i> 3. Új adatbázis létrehozása</h3>
     <ol>
       <li>Object Explorer → jobb klikk a <strong>Databases</strong> mappán</li>
       <li>Válaszd: <strong>New Database</strong></li>
       <li>Adj nevet, majd kattints <strong>OK</strong></li>
     </ol>
   
-    <h3><i class="fas fa-table"></i> 4. lépés – Táblák létrehozása</h3>
+    <h3><i class="fas fa-table"></i> 4. Táblák létrehozása</h3>
     <ul>
       <li>Az adatbázis alatt jobb klikk → <strong>New Table</strong></li>
       <li>Hozz létre mezőket (pl. <code>Id INT PRIMARY KEY</code>, <code>Nev NVARCHAR(100)</code>)</li>
       <li>Mentés: <code>Ctrl + S</code>, majd add meg a tábla nevét</li>
     </ul>
   
-    <h3><i class="fas fa-terminal"></i> 5. lépés – SQL utasítások futtatása</h3>
+    <h3><i class="fas fa-terminal"></i> 5. SQL utasítások futtatása</h3>
     <ol>
       <li>Object Explorer → jobb klikk az adatbázison → <strong>New Query</strong></li>
       <li>Írj be például egy <code>SELECT</code> vagy <code>INSERT</code> utasítást</li>
@@ -45,13 +45,13 @@
   INSERT INTO Felhasznalok (Id, Nev) VALUES (1, 'Teszt Elek');
     </code></pre>
   
-    <h3><i class="fas fa-search"></i> 6. lépés – Adatok böngészése</h3>
+    <h3><i class="fas fa-search"></i> 6. Adatok böngészése</h3>
     <ul>
       <li>Object Explorer → jobb klikk egy táblán → <strong>Select Top 1000 Rows</strong></li>
       <li>A lekérdezés automatikusan generálódik</li>
     </ul>
   
-    <h3><i class="fas fa-user-shield"></i> 7. lépés – Felhasználók és jogosultságok</h3>
+    <h3><i class="fas fa-user-shield"></i> 7. Felhasználók és jogosultságok</h3>
     <pre><code class="language-sql">
   -- Új SQL felhasználó létrehozása
   CREATE LOGIN tesztuser WITH PASSWORD = 'ErősJelszó123';

@@ -1,21 +1,21 @@
 
-    <h2 class="text-center gradient-title">Entity Developer – Step by Step Útmutató</h2>
+    <h2 class="text-center gradient-title">Entity Developer útmutató</h2>
     <hr>
   
-    <h3><i class="fas fa-download"></i> 1. lépés – Letöltés és telepítés</h3>
+    <h3><i class="fas fa-download"></i> 1. Letöltés és telepítés</h3>
     <ul>
       <li>Nyisd meg a <a href="https://www.devart.com/entitydeveloper/" target="_blank">https://www.devart.com/entitydeveloper/</a> oldalt</li>
       <li>Kattints a <strong>Download</strong> gombra</li>
       <li>Futtasd a telepítőt, majd kövesd a telepítési lépéseket</li>
     </ul>
   
-    <h3><i class="fas fa-plug"></i> 2. lépés – Integrálás Visual Studio-val</h3>
+    <h3><i class="fas fa-plug"></i> 2. Integrálás Visual Studio-val</h3>
     <ul>
       <li>Visual Studio újraindítása után az <strong>Entity Developer</strong> elérhető lesz a menüben vagy jobbklikkel a Solution Explorer-ben</li>
       <li>Ha nem látod: Tools → Extensions and Updates → keresd: <code>Entity Developer</code></li>
     </ul>
   
-    <h3><i class="fas fa-database"></i> 3. lépés – Új modell létrehozása</h3>
+    <h3><i class="fas fa-database"></i> 3. Új modell létrehozása</h3>
     <ol>
       <li>Kattints jobb gombbal a projektedre → <strong>Add → New Item</strong></li>
       <li>Válaszd: <strong>Devart Entity Model</strong> (pl. <code>Model.edml</code>)</li>
@@ -23,15 +23,23 @@
       <li>Állítsd be az adatkapcsolatot</li>
       <li>Válaszd ki az importálni kívánt táblákat</li>
     </ol>
+    <button class="btn btn-info" data-toggle="collapse" data-target="#img-new-model" aria-expanded="false" aria-controls="img-new-repo">
+      📷 Képernyőkép megtekintése
+    </button>
+    <!-- Lenyíló kép -->
+    <div id="img-new-model" class="collapse text-center" style="margin-top: 10px;">
+      <img src="images/entitydeveloper-new-model.jpg" alt="Új model" class="img-responsive img-thumbnail center-block" style="max-width: 800px;">
+    </div>
+    
   
-    <h3><i class="fas fa-cogs"></i> 4. lépés – Kódgenerálás beállítása</h3>
+    <h3><i class="fas fa-cogs"></i> 4. Kódgenerálás beállítása</h3>
     <ul>
       <li>A modell mentése után automatikusan generálódik a <code>DbContext</code>, entitások, stb.</li>
       <li>A Properties panelben választhatod az ORM típust: EF Core, EF 6, LinqConnect, stb.</li>
       <li>Output fájlok: <code>*.cs</code> a modellekhez és context-hez</li>
     </ul>
   
-    <h3><i class="fas fa-play"></i> 5. lépés – Használat a kódban</h3>
+    <h3><i class="fas fa-play"></i> 5. Használat a kódban</h3>
     <pre><code class="language-csharp">
   // Példa EF Core DbContext használat:
   using (var db = new MyDbContext())
@@ -40,7 +48,7 @@
   }
     </code></pre>
   
-    <h3><i class="fas fa-wrench"></i> 6. lépés – Modell frissítése</h3>
+    <h3><i class="fas fa-wrench"></i> 6. Modell frissítése</h3>
     <ul>
       <li>Ha az adatbázis megváltozik: nyisd meg az <code>.edml</code> fájlt</li>
       <li>Kattints: <strong>Update From Database</strong> → válaszd ki az új vagy módosult elemeket</li>
