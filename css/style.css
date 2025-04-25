@@ -78,6 +78,15 @@ html, body {
   margin: 0 auto;
   }
 
+a {
+    text-decoration: none;
+    color: #b61e55;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #542d8a;
+}
   a.menu-link {
     text-decoration: none;
     color: #b61e55;
