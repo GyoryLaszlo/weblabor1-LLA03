@@ -1,0 +1,57 @@
+<h2 class="text-center gradient-title"> Visual Studio Code</h2>
+
+<h3><i class="fas fa-download"></i> 1. Live server telepítése</h3>
+<ul>
+    <li>Nyisd meg a boldali vertikális menüben az <strong>Extension</strong> részt</li>
+    <li>A keresőbe írd be: <strong>Live server</strong></li>
+    <li>Valószínűleg az első találat lesz a megfelelő, a helyességét a készítőjéről lehet egyértelműen beazonosítani,
+        aki: <strong>Ritwick Dey</strong></li>
+</ul>
+
+<button class="btn btn-info" data-toggle="collapse" data-target="#vsc-live-server" aria-expanded="false" aria-controls="img-new-repo">
+    📷 Képernyőkép megtekintése
+</button>
+<!-- Lenyíló kép -->
+<div id="vsc-live-server" class="collapse text-center" style="margin-top: 10px;">
+    <img src="images/vsc-live-server.jpg" alt="Új kapcsolódás" class="img-responsive img-thumbnail center-block" style="max-width: 800px;">
+</div>
+
+<h3><i class="fas fa-tips"></i> + tipp ha nem mutat semmit a live server</h3>
+<ul>
+    <li>Amennyiben az oracle fel van telepítve, hajlamosak a portok ütközni, mert az oracle mindig fut számítógép
+        bekapcsolásakor.</li>
+    <li>Vagy a rendszerkonfigurációban leállítod, hogy ne induljon el alapból. Vagy parancssorból leállítod, ez a
+        következő újraindításig érvényben marad.</li>
+</ul>
+
+<div class="panel panel-default">
+    <div class="panel-heading">windows kereső: msconfig</div>
+    <div class="panel-body">
+        <img src="images/vsc-rendszerkonfig.jpg" alt="Rendszerkonfiguráció" class="img-responsive img-thumbnail center-block" style="max-width: 800px;">
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">windows kereső: cmd (futtatás rendszergazadként, ha szükséges)</div>
+    <div class="panel-body">
+        Ez kilistázza, hogy milyen néven fut a Listener, amit leállítunk utána.
+        <pre><code class="language-bash">
+            sc query type= service | findstr /I "tns"
+        </code></pre>
+
+        Leállítjuk a folyamatot a megadott névvel
+        <pre><code class="language-bash">
+            net stop "OracleOraDB21Home1TNSListener"
+        </code></pre>
+
+        Utána már indítható a Live server.
+    </div>
+</div>
+
+<button class="btn btn-info" data-toggle="collapse" data-target="#vsc-cmd" aria-expanded="false" aria-controls="img-new-repo">
+    📷 Képernyőkép megtekintése
+</button>
+<!-- Lenyíló kép -->
+<div id="vsc-cmd" class="collapse text-center" style="margin-top: 10px;">
+    <img src="images/vsc-cmd.jpg" alt="Új kapcsolódás" class="img-responsive img-thumbnail center-block" style="max-width: 800px;">
+</div>
