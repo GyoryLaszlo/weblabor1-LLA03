@@ -181,6 +181,10 @@ pre code.hljs {
   color: #ffffff !important;            /* szövegszín */
 }
 
+.navbar-toggle {
+  margin-right: 25px;
+}
+
 .home-card {
   position: relative;
   background: #fff;
