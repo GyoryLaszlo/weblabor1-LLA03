@@ -27,3 +27,11 @@ A projekt futtatásához helyileg a Visual Studio Code és Live Server segítsé
 Extension kereső:  ```Live server```
 
 
+
+## Élesítés
+
+Az oldal élesítése megtörtént:
+
+
+  [www.cs.digitaltrends.hu](https://cs.digitaltrends.hu/)
+
