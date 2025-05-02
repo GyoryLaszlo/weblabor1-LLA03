@@ -76,6 +76,7 @@ html, body {
   padding: 15px 0 0  0px;
   max-width: 1000px;
   margin: 0 auto;
+  width: 90%;
   }
 
 a {
@@ -143,6 +144,7 @@ pre code.hljs {
 
 .navbar {
   font-family: 'Poppins', sans-serif;
+  border-radius: 10px;
 }
 
 .navbar-header:after {
@@ -338,7 +340,7 @@ header nav ul li a:hover {
 }
 
 
-footer {
+#footer {
   margin-top: 40px;
   padding: 10px;
   text-align: center;
